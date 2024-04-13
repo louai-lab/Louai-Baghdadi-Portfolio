@@ -1,0 +1,61 @@
+.Container {
+  display: flex;
+  column-gap: 10px;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--font-size);
+  font-family: var(--font-family);
+}
+
+.myCard {
+  width: 48%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* background-color: yellow; */
+  background-color: var(--bg-clr-card);
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.PersonalElevatorPitch {
+  width: 48%;
+  /* background-color: blue; */
+}
+
+.personalInfo {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  /* background-color: yellow; */
+  align-items: center;
+  padding: 50px 0px;
+}
+
+.personalInfo > p {
+  font-size: var(--font-size);
+  /* background-color: red; */
+}
+
+.title {
+  color: var(--third-clr);
+}
+
+.myPhoto {
+  border-radius: 50%;
+  width: 60%;
+}
+
+.socialContainer {
+  display: flex;
+  column-gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.download {
+  background-color: var(--bg-clr-download);
+  width: 100%;
+  border-radius: 0 0 10px 10px;
+}

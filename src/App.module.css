@@ -1,25 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Sedan:ital@0;1&display=swap");
-
-* {
-  margin: 0;
-  padding: 0;
-}
-
-:root {
-  --primary-clr: #eaffe6;
-  --secondary-clr: #25b81d;
-  --third-clr: #544a0f;
-  --font-family: "Sedan";
-  --bg-clr: #161616;
-  --bg-clr-card: #2d2d2d;
-  --bg-clr-download: #454545;
-  --color: #eaffe6;
-  --color-navbar: #c4c8cd;
-  --font-size: clamp(15px, 3vw, 30px);
-}
-
 .App {
   background-color: var(--bg-clr);
   color: var(--color);
-  height: 100%;
+  /* height: 100vh; */
+  height: fit-content;
+}
+
+.Components{
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
 }

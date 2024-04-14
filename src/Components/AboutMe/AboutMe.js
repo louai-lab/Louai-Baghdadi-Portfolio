@@ -17,11 +17,19 @@ function AboutMe() {
           <p>{"< " + MyData.name + " />"}</p>
           <p className={AboutMeStyle.title}>{MyData.title}</p>
           <div className={AboutMeStyle.socialContainer}>
-            <a href="">
-              <img src={github} alt="github icon" />
+            <a href={MyData.links.github} className={AboutMeStyle.githubLink}>
+              <img
+                src={github}
+                alt="github icon"
+                className={AboutMeStyle.githubIcon}
+              />
             </a>
-            <a href="">
-              <img src={linkedin} alt="linkedin icon" />
+            <a href="#linkedin" className={AboutMeStyle.githubLink}>
+              <img
+                src={linkedin}
+                alt="linkedin icon"
+                className={AboutMeStyle.githubIcon}
+              />
             </a>
           </div>
         </div>
@@ -30,7 +38,27 @@ function AboutMe() {
         </div>
       </section>
       <section className={AboutMeStyle.PersonalElevatorPitch}>
-        <h1>About Me ...</h1>
+        <div className={AboutMeStyle.elevatorPitchSection}>
+          <p className={AboutMeStyle.gold}>
+            About Me<span className={AboutMeStyle.line}></span>
+          </p>
+          <h1>
+            I am <span className={AboutMeStyle.green}>{MyData.name}</span>
+          </h1>
+          <p className={AboutMeStyle.elevatorPitchPara}>
+            {MyData.elevatorPitch}
+          </p>
+        </div>
+        <div className={AboutMeStyle.cards}>
+          <div className={AboutMeStyle.expCard}>
+            <p className={AboutMeStyle.number}>{MyData.yearsOfExperience}+</p>
+            <p className={AboutMeStyle.green}>Years of Experiences</p>
+          </div>
+          <div className={AboutMeStyle.expCard}>
+            <p className={AboutMeStyle.number}>{MyData.projectsCompleted}+</p>
+            <p className={AboutMeStyle.green}>Projects Completed</p>
+          </div>
+        </div>
       </section>
     </div>
   );

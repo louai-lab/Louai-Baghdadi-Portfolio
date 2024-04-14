@@ -1,6 +1,7 @@
 .Container {
   display: flex;
-  column-gap: 10px;
+  /* column-gap: 100px; */
+  column-gap: 5%;
   justify-content: center;
   align-items: center;
   font-size: var(--font-size);
@@ -8,7 +9,7 @@
 }
 
 .myCard {
-  width: 48%;
+  width: 35%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -19,8 +20,24 @@
   margin-bottom: 20px;
 }
 
+.githubLink {
+  display: inline-block;
+  position: relative;
+}
+
+.githubIcon {
+  transition: opacity 0.3s ease;
+}
+
+.githubLink:hover .githubIcon {
+  opacity: 0.7;
+}
+
 .PersonalElevatorPitch {
-  width: 48%;
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
   /* background-color: blue; */
 }
 
@@ -35,6 +52,7 @@
 
 .personalInfo > p {
   font-size: var(--font-size);
+  text-align: center;
   /* background-color: red; */
 }
 
@@ -58,4 +76,53 @@
   background-color: var(--bg-clr-download);
   width: 100%;
   border-radius: 0 0 10px 10px;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0px;
+}
+
+.gold {
+  color: var(--third-clr);
+}
+
+.line {
+  display: inline-block;
+  width: 20%;
+  border-bottom: 1px solid white;
+  margin-left: 10px;
+}
+.green {
+  color: var(--secondary-clr);
+  width: min-content;
+}
+
+.elevatorPitchSection {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.elevatorPitchPara {
+  font-size: clamp(12px, 2vw, 30px);
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  column-gap: 20px;
+}
+
+.number {
+  font-size: clamp(20px, 4vw, 40px);
+}
+
+.expCard {
+  display: flex;
+  column-gap: 5px;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-clr-card);
+  width: 50%;
+  padding: 10px 0px;
+  border-radius: 10px;
 }

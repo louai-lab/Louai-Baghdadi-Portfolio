@@ -1,4 +1,5 @@
 import louai from "../Assets/louai.jpg";
+import skillIcon from "../Assets/reactIcon.png";
 
 const staticData = {
   name: "Louai Baghdadi",

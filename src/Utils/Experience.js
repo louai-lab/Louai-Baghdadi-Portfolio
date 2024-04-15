@@ -1,28 +1,55 @@
-import { Decal, OrbitControls, useTexture } from "@react-three/drei";
-import { Texture } from "three";
+import React, { useRef } from "react";
+import { OrbitControls, useTexture } from "@react-three/drei";
 import reactIcon from "../Assets/devicon--react.svg";
-import { SphereGeometry, MeshBasicMaterial, Mesh } from "three";
+import nodeIcon from "../Assets/louai.jpg";
+import * as THREE from "three";
+
+const skills = [
+  {
+    name: "React",
+    icon: reactIcon,
+  },
+  {
+    name: "Nodejs",
+    icon: nodeIcon,
+  },
+];
 
 export const Experience = () => {
-  const Texture = useTexture(reactIcon);
+  const orbitControlsRef = useRef();
+  const scene = new THREE.Scene();
 
-  const radius = 50;
-  const widthSegments = 32;
-  const heightSegments = 16;
+  const texture1 = useTexture(reactIcon);
+  const texture2 = useTexture(nodeIcon);
 
-  const geometry = new SphereGeometry(radius, widthSegments, heightSegments);
-  const material = new MeshBasicMaterial({ map: Texture });
-  const sphere = new Mesh(geometry, material);
+  const circles = skills.map((skill, index) => {
+    const texture = index === 0 ? texture1 : texture2;
 
-  const imageWidth = 1;
-  const imageHeight = 1;
+    const geometry = new THREE.CircleGeometry(2, 32);
+    const material = new THREE.MeshBasicMaterial({
+      map: texture,
+      side: THREE.DoubleSide,
+      receiveShadow: true,
+    });
 
-  Texture.repeat.set(imageWidth, imageHeight);
+    const circle = new THREE.Mesh(geometry, material);
+    circle.castShadow = true;
+    circle.receiveShadow = true;
+    circle.castShadow = true;
+
+    circle.position.set(index * 5, 0, 0);
+
+    scene.add(circle);
+
+    return <primitive key={index} object={circle} />;
+  });
 
   return (
     <>
-      <OrbitControls />
-      <primitive object={sphere} />
+      <OrbitControls ref={orbitControlsRef} />
+      <ambientLight intensity={0.5} />
+      <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} castShadow />
+      {circles}
     </>
   );
 };

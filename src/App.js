@@ -4,6 +4,7 @@ import StyleApp from "./App.module.css";
 import Navbar from "./Components/Navbar/Navbar.js";
 import AboutMe from "./Components/AboutMe/AboutMe.js";
 import Skills from "./Components/Skills/Skills.js";
+import Projects from "./Components/Projects/Projects.js";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <div className={StyleApp.Components}>
           <AboutMe />
           <Skills />
+          <Projects />
         </div>
       </div>
     </BrowserRouter>

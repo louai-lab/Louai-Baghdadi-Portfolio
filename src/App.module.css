@@ -3,6 +3,7 @@
   color: var(--color);
   /* height: 100vh; */
   height: fit-content;
+  /* padding-bottom: 100px; */
 }
 
 .Components{

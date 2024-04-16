@@ -15,11 +15,9 @@ function Skills() {
         </h1>
       </div>
       <div className={SkillsStyles.skillsIcons}>
-        <Canvas shadows>
-          {" "}
+        <Canvas shadows style={{ height: "400px" }}>
           <Experience />
         </Canvas>
-        
       </div>
     </div>
   );

@@ -29,12 +29,9 @@ export const Experience = () => {
     const material = new THREE.MeshBasicMaterial({
       map: texture,
       side: THREE.DoubleSide,
-      receiveShadow: true,
     });
 
     const circle = new THREE.Mesh(geometry, material);
-    circle.castShadow = true;
-    circle.receiveShadow = true;
     circle.castShadow = true;
 
     circle.position.set(index * 5, 0, 0);

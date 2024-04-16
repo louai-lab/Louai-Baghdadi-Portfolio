@@ -3,13 +3,16 @@
   /* column-gap: 100px; */
   column-gap: 5%;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   font-size: var(--font-size);
   font-family: var(--font-family);
+  margin-bottom: 20px;
+  /* height: 100vh; */
 }
 
 .myCard {
   width: 35%;
+  height: fit-content;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -17,16 +20,16 @@
   /* background-color: yellow; */
   background-color: var(--bg-clr-card);
   border-radius: 10px;
-  margin-bottom: 20px;
 }
 
 .githubLink {
-  display: inline-block;
-  position: relative;
+  display: flex;
+  justify-content: center;
 }
 
 .githubIcon {
   transition: opacity 0.3s ease;
+  width: 100%;
 }
 
 .githubLink:hover .githubIcon {
@@ -37,7 +40,8 @@
   width: 45%;
   display: flex;
   flex-direction: column;
-  row-gap: 20px;
+  justify-content: space-between;
+  /* row-gap: 10px; */
   /* background-color: blue; */
 }
 
@@ -45,9 +49,16 @@
   display: flex;
   flex-direction: column;
   row-gap: 20px;
-  /* background-color: yellow; */
   align-items: center;
-  padding: 50px 0px;
+  padding: 30px 0px;
+}
+
+.jobTitle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 10px;
 }
 
 .personalInfo > p {
@@ -58,6 +69,7 @@
 
 .title {
   color: var(--third-clr);
+  text-align: center;
 }
 
 .myPhoto {
@@ -73,11 +85,13 @@
 }
 
 .download {
+  all: unset;
   background-color: var(--bg-clr-download);
   width: 100%;
   border-radius: 0 0 10px 10px;
   display: flex;
   justify-content: center;
+  column-gap: 5px;
   padding: 10px 0px;
 }
 
@@ -99,7 +113,7 @@
 .elevatorPitchSection {
   display: flex;
   flex-direction: column;
-  row-gap: 20px;
+  row-gap: 10px;
 }
 
 .elevatorPitchPara {
@@ -125,4 +139,58 @@
   width: 50%;
   padding: 10px 0px;
   border-radius: 10px;
+}
+
+@media screen and (max-width: 600px) {
+  .Container {
+    flex-direction: column;
+    row-gap: 20px;
+    align-items: center;
+  }
+  .myCard {
+    width: 95%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .personalInfo {
+    flex-direction: row;
+    justify-content: space-around;
+    width: fit-content;
+    padding: 10px 0px;
+  }
+  .myPhoto {
+    width: 48%;
+  }
+
+  .download {
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    height: 255px;
+    border-radius: 0px 10px 10px 0px;
+  }
+  .download > p {
+    display: none;
+  }
+  .PersonalElevatorPitch {
+    width: 95%;
+    row-gap: 10px;
+  }
+  .myName {
+    font-size: clamp(18px, 3vw, 25px);
+    text-align: center;
+  }
+  .downloadIcon {
+    width: 28px;
+  }
+  .githubIcon {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .download {
+    height: 165px;
+  }
 }

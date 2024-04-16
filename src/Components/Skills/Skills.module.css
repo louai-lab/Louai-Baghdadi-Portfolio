@@ -1,7 +1,8 @@
 .ContainerSkills {
-  width: 85%;
+  width: 95%;
   display: flex;
   flex-direction: column;
+  row-gap: 40px;
   margin: 0 auto;
   font-size: var(--font-size);
   font-family: var(--font-family);

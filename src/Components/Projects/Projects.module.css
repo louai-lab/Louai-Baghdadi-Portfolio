@@ -81,6 +81,7 @@
 .showMoreLessButton {
   border: none;
   background-color: transparent;
+  color: grey;
 }
 
 .showMoreLessButton:hover {

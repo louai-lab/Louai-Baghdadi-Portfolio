@@ -1,7 +1,22 @@
 import React from "react";
 import SkillsStyles from "./Skills.module.css";
 import { Canvas } from "@react-three/fiber";
-import { Experience } from "../../Utils/Experience";
+import { ThreeJs } from "../../Utils/ThreeJs";
+// import reactIcon from "../Assets/devicon--react.svg";
+// import nodeIcon from "../Assets/louai.jpg";
+import nodeIcon from "../../Assets/louai.jpg";
+import reactIcon from "../../Assets/devicon--react.svg";
+
+const skills = [
+  {
+    name: "React",
+    icon: reactIcon,
+  },
+  {
+    name: "Nodejs",
+    icon: nodeIcon,
+  },
+];
 
 function Skills() {
   return (
@@ -15,9 +30,11 @@ function Skills() {
         </h1>
       </div>
       <div className={SkillsStyles.skillsIcons}>
-        <Canvas shadows style={{ height: "400px" }}>
-          <Experience />
-        </Canvas>
+        {skills.map((skill, index) => (
+          <Canvas shadows style={{ height: "400px", width:"400px" }}>
+            <ThreeJs key={index} icon={skill.icon} name={skill.name} />
+          </Canvas>
+        ))}
       </div>
     </div>
   );

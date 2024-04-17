@@ -5,6 +5,7 @@ import Navbar from "./Components/Navbar/Navbar.js";
 import AboutMe from "./Components/AboutMe/AboutMe.js";
 import Skills from "./Components/Skills/Skills.js";
 import Projects from "./Components/Projects/Projects.js";
+import Experiences from "./Components/Experiences/Experiences.js";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <AboutMe />
           <Skills />
           <Projects />
+          <Experiences />
         </div>
       </div>
     </BrowserRouter>

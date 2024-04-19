@@ -4,6 +4,7 @@ import MyData from "../../Data/MyData";
 import github from "../../Assets/akar-icons--github-outline-fill.svg";
 import linkedin from "../../Assets/et--linkedin.svg";
 import downloadIcon from "../../Assets/material-symbols--download (1).svg";
+import Reveal from "../../Utils/Reveal";
 
 function AboutMe() {
   return (
@@ -16,24 +17,37 @@ function AboutMe() {
             className={AboutMeStyle.myPhoto}
           />
           <div className={AboutMeStyle.jobTitle}>
-            <p className={AboutMeStyle.myName}>{"< " + MyData.name + " />"}</p>
-            <p className={AboutMeStyle.title}>{MyData.title}</p>
-            <div className={AboutMeStyle.socialContainer}>
-              <a href={MyData.links.github} className={AboutMeStyle.githubLink}>
-                <img
-                  src={github}
-                  alt="github icon"
-                  className={AboutMeStyle.githubIcon}
-                />
-              </a>
-              <a href="#linkedin" className={AboutMeStyle.githubLink}>
-                <img
-                  src={linkedin}
-                  alt="linkedin icon"
-                  className={AboutMeStyle.githubIcon}
-                />
-              </a>
-            </div>
+            <Reveal>
+              {" "}
+              <p className={AboutMeStyle.myName}>
+                {"< " + MyData.name + " />"}
+              </p>
+            </Reveal>
+            <Reveal>
+              {" "}
+              <p className={AboutMeStyle.title}>{MyData.title}</p>
+            </Reveal>
+            <Reveal>
+              <div className={AboutMeStyle.socialContainer}>
+                <a
+                  href={MyData.links.github}
+                  className={AboutMeStyle.githubLink}
+                >
+                  <img
+                    src={github}
+                    alt="github icon"
+                    className={AboutMeStyle.githubIcon}
+                  />
+                </a>
+                <a href="#linkedin" className={AboutMeStyle.githubLink}>
+                  <img
+                    src={linkedin}
+                    alt="linkedin icon"
+                    className={AboutMeStyle.githubIcon}
+                  />
+                </a>
+              </div>
+            </Reveal>
           </div>
         </div>
         <button className={AboutMeStyle.download}>
@@ -48,17 +62,21 @@ function AboutMe() {
       <section className={AboutMeStyle.PersonalElevatorPitch}>
         <div className={AboutMeStyle.elevatorPitchSection}>
           <p className={AboutMeStyle.gold}>
-            About Me<span className={AboutMeStyle.line}></span>
+            <Reveal>
+              <h1>About Me</h1>
+            </Reveal>
+            <span className={AboutMeStyle.line}></span>
           </p>
-          {/* <h1>
-            I am <span className={AboutMeStyle.green}>{MyData.name}</span>
-          </h1> */}
-          <h1>
-            I am <span className={AboutMeStyle.green}>{MyData.name}</span>
-          </h1>
-          <p className={AboutMeStyle.elevatorPitchPara}>
-            {MyData.elevatorPitch}
-          </p>
+          <Reveal>
+            <h1>
+              I am <span className={AboutMeStyle.green}>{MyData.name}</span>
+            </h1>
+          </Reveal>
+          <Reveal>
+            <p className={AboutMeStyle.elevatorPitchPara}>
+              {MyData.elevatorPitch}
+            </p>
+          </Reveal>
         </div>
         <div className={AboutMeStyle.cards}>
           <div className={AboutMeStyle.expCard}>

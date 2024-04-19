@@ -10,6 +10,9 @@
 
 .gold {
   color: var(--third-clr);
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
 }
 
 .line {

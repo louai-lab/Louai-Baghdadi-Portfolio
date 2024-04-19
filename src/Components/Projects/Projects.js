@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ProjectsStyles from "./Projects.module.css";
 import ProjectImage from "../../Assets/reactIcon.png";
 import linkIcon from "../../Assets/ph--link.svg";
+import Reveal from "../../Utils/Reveal";
 
 const ProjectsData = [
   {
@@ -35,11 +36,16 @@ function Projects() {
     <div className={ProjectsStyles.ContainerProjects}>
       <div className={ProjectsStyles.title}>
         <p className={ProjectsStyles.gold}>
-          My Projects<span className={ProjectsStyles.line}></span>
+          <Reveal>
+            <h1>My Projects</h1>
+          </Reveal>
+          <span className={ProjectsStyles.line}></span>
         </p>
-        <h1>
-          My Projects <span className={ProjectsStyles.green}>Showcase</span>
-        </h1>
+        <Reveal>
+          <h1>
+            My Projects <span className={ProjectsStyles.green}>Showcase</span>
+          </h1>
+        </Reveal>
       </div>
       <div className={ProjectsStyles.cards}>
         {ProjectsData.map((project, index) => {
@@ -51,22 +57,27 @@ function Projects() {
                 alt={project.title}
                 className={ProjectsStyles.imageProject}
               />
-              <p className={ProjectsStyles.singleTitle}>{project.title}</p>
+              <p className={ProjectsStyles.singleTitle}>
+                <Reveal>{project.title}</Reveal>
+              </p>
               <p className={ProjectsStyles.description}>
-                {project.description.length <= 150 || isExpanded
-                  ? project.description
-                  : project.description.substring(0, 150) + "..."}
-                {project.description.length > 150 && (
-                  <button
-                    onClick={() => toggleDescription(index)}
-                    className={ProjectsStyles.showMoreLessButton}
-                  >
-                    {isExpanded ? "Show Less" : "Show More"}
-                  </button>
-                )}
+                <Reveal>
+                  {" "}
+                  {project.description.length <= 150 || isExpanded
+                    ? project.description
+                    : project.description.substring(0, 150) + "..."}
+                  {project.description.length > 150 && (
+                    <button
+                      onClick={() => toggleDescription(index)}
+                      className={ProjectsStyles.showMoreLessButton}
+                    >
+                      {isExpanded ? "Show Less" : "Show More"}
+                    </button>
+                  )}
+                </Reveal>
               </p>
 
-              <a href="" className={ProjectsStyles.livePreview}>
+              <a href="#x" className={ProjectsStyles.livePreview}>
                 <img src={linkIcon} alt="link" /> Live Preview
               </a>
             </div>

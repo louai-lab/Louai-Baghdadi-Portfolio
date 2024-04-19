@@ -1,23 +1,19 @@
 .Container {
   display: flex;
-  /* column-gap: 100px; */
   column-gap: 5%;
   justify-content: center;
-  /* align-items: center; */
   font-size: var(--font-size);
   font-family: var(--font-family);
-  margin-bottom: 20px;
-  /* height: 100vh; */
+  /* margin-bottom: 20px; */
 }
 
 .myCard {
-  width: 35%;
+  width: 40%;
   height: fit-content;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* background-color: yellow; */
   background-color: var(--bg-clr-card);
   border-radius: 10px;
 }
@@ -37,12 +33,10 @@
 }
 
 .PersonalElevatorPitch {
-  width: 45%;
+  width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* row-gap: 10px; */
-  /* background-color: blue; */
 }
 
 .personalInfo {
@@ -97,6 +91,9 @@
 
 .gold {
   color: var(--third-clr);
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
 }
 
 .line {

@@ -1,8 +1,28 @@
 import * as THREE from "three";
-import React , {useRef} from "react";
-import { OrbitControls , useTexture } from "@react-three/drei";
+import React, { useRef } from "react";
+import { OrbitControls, useTexture } from "@react-three/drei";
+// import { TextGeometry } from "three/addons/geometries/TextGeometry.js";
+// import { FontLoader } from 'three/addons/loaders/FontLoader.js';
+
+
 
 export const ThreeJs = ({ icon }) => {
+  // const loader = new FontLoader()
+
+  // loader.load("fonts/helvetiker_regular.typeface.json", function (font) {
+  //   const geometry = new TextGeometry("Hello three.js!", {
+  //     font: font,
+  //     size: 80,
+  //     depth: 5,
+  //     curveSegments: 12,
+  //     bevelEnabled: true,
+  //     bevelThickness: 10,
+  //     bevelSize: 8,
+  //     bevelOffset: 0,
+  //     bevelSegments: 5,
+  //   });
+  // });
+
   const orbitControlsRef = useRef();
   const scene = new THREE.Scene();
 

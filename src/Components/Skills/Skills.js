@@ -7,6 +7,7 @@ import { ThreeJs } from "../../Utils/ThreeJs";
 import nodeIcon from "../../Assets/louai.jpg";
 import reactIcon from "../../Assets/devicon--react.svg";
 import Reveal from "../../Utils/Reveal";
+import { useDarkMode } from "../../Utils/DarkMode";
 
 const skills = [
   {
@@ -20,6 +21,7 @@ const skills = [
 ];
 
 function Skills() {
+  const { darkMode } = useDarkMode();
   return (
     <div className={SkillsStyles.ContainerSkills}>
       <div className={SkillsStyles.title}>
@@ -27,7 +29,11 @@ function Skills() {
           <Reveal>
             <h1>My Skills</h1>
           </Reveal>
-          <span className={SkillsStyles.line}></span>
+          <span
+            className={
+              darkMode === false ? SkillsStyles.lineDark : SkillsStyles.line
+            }
+          ></span>
         </p>
         <Reveal>
           <h1>

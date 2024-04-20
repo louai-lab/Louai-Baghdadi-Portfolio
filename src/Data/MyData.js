@@ -6,6 +6,7 @@ const staticData = {
   image: louai,
   title: "Full Stack Web Developer",
   links: {
+    gmail: "louaibaghdadi27@gmail.com",
     facebook: "https://www.facebook.com/louai.baghdadi",
     github: "https://github.com/louai-lab",
     linkedin: "https://www.linkedin.com/in/louaibaghdadi",

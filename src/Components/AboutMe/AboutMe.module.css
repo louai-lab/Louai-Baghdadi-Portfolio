@@ -89,6 +89,10 @@
   padding: 10px 0px;
 }
 
+.download:hover {
+  cursor: pointer;
+}
+
 .gold {
   color: var(--third-clr);
   display: flex;
@@ -102,6 +106,14 @@
   border-bottom: 1px solid white;
   margin-left: 10px;
 }
+
+.lineDark {
+  display: inline-block;
+  width: 20%;
+  border-bottom: 1px solid black;
+  margin-left: 10px;
+}
+
 .green {
   color: var(--secondary-clr);
   width: min-content;
@@ -167,6 +179,7 @@
     height: 255px;
     border-radius: 0px 10px 10px 0px;
   }
+
   .download > p {
     display: none;
   }

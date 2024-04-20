@@ -1,0 +1,64 @@
+.ContactComponent {
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--font-size);
+  font-family: var(--font-family);
+  margin: 0 auto;
+  padding-bottom: 50px;
+}
+
+.gold {
+  color: var(--third-clr);
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.ContactPara {
+  text-align: center;
+}
+
+.ContactLinkedin {
+  all: unset;
+  color: var(--secondary-clr);
+}
+
+.ahref {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.messageIcon,
+.span {
+  transition: color 0.25s ease; /* Add transition effect to color change */
+}
+
+.messageContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  gap: 0.8rem;
+  width: fit-content;
+  margin: auto;
+  transition: color 0.25s ease;
+}
+
+.messageContainer:hover .messageIcon {
+  color: var(--secondary-clr);
+}
+
+.messageContainer:hover .span {
+  color: var(--secondary-clr);
+}

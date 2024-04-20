@@ -5,8 +5,11 @@ import github from "../../Assets/akar-icons--github-outline-fill.svg";
 import linkedin from "../../Assets/et--linkedin.svg";
 import downloadIcon from "../../Assets/material-symbols--download (1).svg";
 import Reveal from "../../Utils/Reveal";
+import { useDarkMode } from "../../Utils/DarkMode";
 
 function AboutMe() {
+  const { darkMode } = useDarkMode();
+
   return (
     <div className={AboutMeStyle.Container}>
       <section className={AboutMeStyle.myCard}>
@@ -65,7 +68,11 @@ function AboutMe() {
             <Reveal>
               <h1>About Me</h1>
             </Reveal>
-            <span className={AboutMeStyle.line}></span>
+            <span
+              className={
+                darkMode === false ? AboutMeStyle.lineDark : AboutMeStyle.line
+              }
+            ></span>
           </p>
           <Reveal>
             <h1>

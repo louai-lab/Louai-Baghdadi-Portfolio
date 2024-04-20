@@ -1,17 +1,16 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-
 
 @import url("https://fonts.googleapis.com/css2?family=Sedan:ital@0;1&display=swap");
 
@@ -22,14 +21,15 @@ code {
 
 :root {
   --primary-clr: #eaffe6;
+  --bg-clr-light: #eaffe6;
   --secondary-clr: #25b81d;
   --third-clr: #544a0f;
   --font-family: "Sedan";
   --bg-clr: #161616;
+  --color-dark: #161616;
   --bg-clr-card: #2d2d2d;
   --bg-clr-download: #454545;
   --color: #eaffe6;
   --color-navbar: #c4c8cd;
   --font-size: clamp(12px, 3vw, 25px);
 }
-

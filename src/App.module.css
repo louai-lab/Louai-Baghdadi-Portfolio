@@ -1,12 +1,15 @@
 .App {
-  background-color: var(--bg-clr);
-  color: var(--color);
-  /* height: 100vh; */
+  background-color: var(--bg-clr-light);
+  color: var(--color-dark);
   height: fit-content;
-  /* padding-bottom: 100px; */
 }
 
-.Components{
+.AppDark {
+  background-color: var(--bg-clr);
+  color: var(--color);
+}
+
+.Components {
   display: flex;
   flex-direction: column;
   row-gap: 6rem;

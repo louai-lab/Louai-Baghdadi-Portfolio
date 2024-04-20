@@ -1,6 +1,7 @@
 import React from "react";
 import ExperiencesStyles from "./Experiences.module.css";
 import Reveal from "../../Utils/Reveal";
+import { useDarkMode } from "../../Utils/DarkMode";
 
 const certificates = [
   {
@@ -29,6 +30,8 @@ const certificates = [
 ];
 
 function Experiences() {
+  const { darkMode } = useDarkMode();
+
   return (
     <div className={ExperiencesStyles.ContainerExperiences}>
       <div className={ExperiencesStyles.title}>
@@ -36,7 +39,13 @@ function Experiences() {
           <Reveal>
             <h1>My Experinces</h1>
           </Reveal>
-          <span className={ExperiencesStyles.line}></span>
+          <span
+            className={
+              darkMode === false
+                ? ExperiencesStyles.lineDark
+                : ExperiencesStyles.line
+            }
+          ></span>
         </p>
         <Reveal>
           <h1>

@@ -3,8 +3,10 @@ import ContactStyle from "./Contact.module.css";
 import { ReactComponent as MessageIcon } from "../../Assets/wpf--message-outline.svg";
 import Reveal from "../../Utils/Reveal";
 import MyData from "../../Data/MyData";
+import { useDarkMode } from "../../Utils/DarkMode";
 
 function Contact() {
+  const { darkMode } = useDarkMode();
   return (
     <div className={ContactStyle.ContactComponent}>
       <div className={ContactStyle.title}>
@@ -27,8 +29,20 @@ function Contact() {
       <Reveal>
         <a href={MyData.links.gmail} className={ContactStyle.ahref}>
           <div className={ContactStyle.messageContainer}>
-            <MessageIcon className={ContactStyle.messageIcon} />
-            <span className={ContactStyle.span}>{MyData.links.gmail}</span>
+            <MessageIcon
+            className={
+              darkMode === false
+                ? ContactStyle.messageIcon
+                : ContactStyle.messageIconDark
+            }
+            />
+            <span
+              className={
+                darkMode === false ? ContactStyle.span : ContactStyle.spanDark
+              }
+            >
+              {MyData.links.gmail}
+            </span>
           </div>
         </a>
       </Reveal>

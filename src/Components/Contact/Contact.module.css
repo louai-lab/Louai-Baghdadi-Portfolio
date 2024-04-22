@@ -31,6 +31,12 @@
 .ContactLinkedin {
   all: unset;
   color: var(--secondary-clr);
+  transition: opacity 0.3s ease;
+}
+
+.ContactLinkedin:hover{
+  cursor: pointer;
+  opacity: 0.7;
 }
 
 .ahref {
@@ -41,8 +47,26 @@
 
 .messageIcon,
 .span {
-  transition: color 0.25s ease; /* Add transition effect to color change */
+  transition: color 0.25s ease;
+  color: var(--color-dark);
+  /* color: red; */
 }
+
+.messageIconDark,
+.spanDark {
+  transition: color 0.25s ease;
+  color: var(--color);
+
+  /* color: yellow; */
+}
+
+/* .span {
+  color: var(--color);
+}
+
+.spanDark {
+  color: var(--color-dark);
+} */
 
 .messageContainer {
   display: flex;
@@ -56,6 +80,14 @@
 }
 
 .messageContainer:hover .messageIcon {
+  color: var(--secondary-clr);
+}
+
+.messageContainer:hover .messageIconDark {
+  color: var(--secondary-clr);
+}
+
+.messageContainer:hover .spanDark {
   color: var(--secondary-clr);
 }
 

@@ -10,7 +10,7 @@ const Navbar = () => {
 
   const handleDarkModeToggle = () => {
     toggleDarkMode();
-    console.log(!darkMode);
+    // console.log(!darkMode);
   };
 
   useEffect(() => {

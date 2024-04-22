@@ -1,0 +1,149 @@
+.myCard {
+  width: 40%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-clr-card);
+  border-radius: 10px;
+}
+
+.personalInfo {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  align-items: center;
+  padding: 30px 0px;
+}
+
+.personalInfo > p {
+  font-size: var(--font-size);
+  text-align: center;
+}
+
+.myPhoto {
+  border-radius: 50%;
+  width: 60%;
+}
+
+.jobTitle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 10px;
+}
+
+.title {
+  color: var(--third-clr);
+  text-align: center;
+}
+
+.socialContainer {
+  display: flex;
+  column-gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.githubLink {
+  display: flex;
+  justify-content: center;
+}
+
+.githubIcon {
+  transition: opacity 0.3s ease;
+  width: 100%;
+}
+
+.githubLink:hover .githubIcon {
+  opacity: 0.7;
+}
+
+.download {
+  all: unset;
+  background-color: var(--bg-clr-download);
+  width: 100%;
+  border-radius: 0 0 10px 10px;
+  display: flex;
+  justify-content: center;
+  column-gap: 5px;
+  padding: 10px 0px;
+}
+
+.download:hover {
+  cursor: pointer;
+}
+
+.downloadTitle {
+  color: var(--bg-clr-light);
+}
+
+/* .download > p {
+  color: red;
+} */
+
+.myName {
+  font-size: clamp(18px, 3vw, 25px);
+  text-align: center;
+  color: var(--bg-clr-light);
+}
+
+.myNameDark {
+  font-size: clamp(18px, 3vw, 25px);
+  text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+  .personalInfo {
+    flex-direction: row;
+    justify-content: space-around;
+    width: fit-content;
+    padding: 10px 0px;
+  }
+  .myCard {
+    width: 95%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .personalInfo {
+    flex-direction: row;
+    justify-content: space-around;
+    width: fit-content;
+    padding: 10px 0px;
+  }
+  .myPhoto {
+    width: 48%;
+  }
+
+  .download {
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    height: 255px;
+    border-radius: 0px 10px 10px 0px;
+  }
+
+  .downloadTitle {
+    display: none;
+  }
+  .PersonalElevatorPitch {
+    width: 95%;
+    row-gap: 10px;
+  }
+
+  .downloadIcon {
+    width: 28px;
+  }
+  .githubIcon {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .download {
+    height: 165px;
+  }
+}

@@ -7,10 +7,11 @@
 .AppDark {
   background-color: var(--bg-clr);
   color: var(--color);
+  height: fit-content;
 }
 
 .Components {
   display: flex;
   flex-direction: column;
-  row-gap: 6rem;
+  row-gap: 3rem;
 }

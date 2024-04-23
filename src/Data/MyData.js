@@ -7,7 +7,8 @@ const staticData = {
   title: "Full Stack Web Developer",
   links: {
     gmail: "louaibaghdadi27@gmail.com",
-    facebook: "https://www.facebook.com/louai.baghdadi",
+    instagram: "https://www.instagram.com/louay_baghdadi/",
+    facebook: "https://www.facebook.com/louai.baghdadi.7",
     github: "https://github.com/louai-lab",
     linkedin: "https://www.linkedin.com/in/louaibaghdadi",
   },

@@ -17,11 +17,12 @@ code {
 * {
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
 
 :root {
   --primary-clr: #eaffe6;
-  --bg-clr-light: #eaffe6;
+  --bg-clr-light: #f2faf1;
   --secondary-clr: #25b81d;
   --third-clr: #544a0f;
   --font-family: "Sedan";

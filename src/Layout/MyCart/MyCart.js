@@ -11,56 +11,6 @@ function MyCart() {
   const { darkMode } = useDarkMode();
 
   return (
-    // <section className={AboutMeStyle.myCard}>
-    //   <div className={AboutMeStyle.personalInfo}>
-    //     <img src={staticData.image} alt="louai" className={AboutMeStyle.myPhoto} />
-    //     <div className={AboutMeStyle.jobTitle}>
-    //       <Reveal>
-    //         {" "}
-    //         <p
-    //           className={
-    //             darkMode === false
-    //               ? AboutMeStyle.myName
-    //               : AboutMeStyle.myNameDark
-    //           }
-    //         >
-    //           {"< " + staticData.name + " />"}
-    //         </p>
-    //       </Reveal>
-    //       <Reveal>
-    //         {" "}
-    //         <p className={AboutMeStyle.title}>{staticData.title}</p>
-    //       </Reveal>
-    //       <Reveal>
-    //         <div className={AboutMeStyle.socialContainer}>
-    //           <a href={staticData.links.github} className={AboutMeStyle.githubLink}>
-    //             <img
-    //               src={github}
-    //               alt="github icon"
-    //               className={AboutMeStyle.githubIcon}
-    //             />
-    //           </a>
-    //           <a href="#linkedin" className={AboutMeStyle.githubLink}>
-    //             <img
-    //               src={linkedin}
-    //               alt="linkedin icon"
-    //               className={AboutMeStyle.githubIcon}
-    //             />
-    //           </a>
-    //         </div>
-    //       </Reveal>
-    //     </div>
-    //   </div>
-    //   <button className={AboutMeStyle.download}>
-    //     <p className={AboutMeStyle.downloadTitle}>Download CV</p>
-    //     <img
-    //       src={downloadIcon}
-    //       alt="download CV"
-    //       className={AboutMeStyle.downloadIcon}
-    //     />
-    //   </button>
-    // </section>
-
     <div className={AboutMeStyle.containerCard}>
       <div className={AboutMeStyle.card}>
         <div

@@ -1,9 +1,6 @@
 import React from "react";
 import AboutMeStyle from "./AboutMe.module.css";
 import MyData from "../../Data/MyData";
-// import github from "../../Assets/akar-icons--github-outline-fill.svg";
-// import linkedin from "../../Assets/et--linkedin.svg";
-// import downloadIcon from "../../Assets/material-symbols--download (1).svg";
 import Reveal from "../../Utils/Reveal";
 import { useDarkMode } from "../../Utils/DarkMode";
 import MyCart from "../../Layout/MyCart/MyCart";

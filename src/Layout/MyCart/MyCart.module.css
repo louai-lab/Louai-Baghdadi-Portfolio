@@ -1,156 +1,10 @@
-/* .myCard {
-  width: 40%;
-  height: fit-content;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--bg-clr-card);
-  border-radius: 10px;
-}
-
-.personalInfo {
-  display: flex;
-  flex-direction: column;
-  row-gap: 20px;
-  align-items: center;
-  padding: 30px 0px;
-}
-
-.personalInfo > p {
-  font-size: var(--font-size);
-  text-align: center;
-}
-
-.myPhoto {
-  border-radius: 50%;
-  width: 60%;
-}
-
-.jobTitle {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  row-gap: 10px;
-}
-
-.title {
-  color: var(--third-clr);
-  text-align: center;
-}
-
-.socialContainer {
-  display: flex;
-  column-gap: 10px;
-  justify-content: center;
-  align-items: center;
-}
-
-.githubLink {
-  display: flex;
-  justify-content: center;
-}
-
-.githubIcon {
-  transition: opacity 0.3s ease;
-  width: 100%;
-}
-
-.githubLink:hover .githubIcon {
-  opacity: 0.7;
-}
-
-.download {
-  all: unset;
-  background-color: var(--bg-clr-download);
-  width: 100%;
-  border-radius: 0 0 10px 10px;
-  display: flex;
-  justify-content: center;
-  column-gap: 5px;
-  padding: 10px 0px;
-}
-
-.download:hover {
-  cursor: pointer;
-}
-
-.downloadTitle {
-  color: var(--bg-clr-light);
-}
-
-.myName {
-  font-size: clamp(18px, 3vw, 25px);
-  text-align: center;
-  color: var(--bg-clr-light);
-}
-
-.myNameDark {
-  font-size: clamp(18px, 3vw, 25px);
-  text-align: center;
-}
-
-@media screen and (max-width: 600px) {
-  .personalInfo {
-    flex-direction: row;
-    justify-content: space-around;
-    width: fit-content;
-    padding: 10px 0px;
-  }
-  .myCard {
-    width: 95%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-  }
-  .personalInfo {
-    flex-direction: row;
-    justify-content: space-around;
-    width: fit-content;
-    padding: 10px 0px;
-  }
-  .myPhoto {
-    width: 48%;
-  }
-
-  .download {
-    width: fit-content;
-    display: flex;
-    justify-content: center;
-    height: 255px;
-    border-radius: 0px 10px 10px 0px;
-  }
-
-  .downloadTitle {
-    display: none;
-  }
-  .PersonalElevatorPitch {
-    width: 95%;
-    row-gap: 10px;
-  }
-
-  .downloadIcon {
-    width: 28px;
-  }
-  .githubIcon {
-    width: 50%;
-  }
-}
-
-@media screen and (max-width: 400px) {
-  .download {
-    height: 165px;
-  }
-} */
-
 .myPhoto {
   border-radius: 50%;
   width: 35%;
 }
 
 .containerCard {
-  width: 40%;
+  width: 30%;
   color: var(--color);
   perspective: 800px;
   font-family: var(--font-family);
@@ -179,7 +33,7 @@
   top: 0;
   border-top: none;
   border-radius: 0 0 1rem 1rem;
-  box-shadow: 0px 0px 10px 5px rgba(255, 255, 255, 0.7);
+  box-shadow: 0px 0px 5px 0px rgba(255, 255, 255, 0.7);
 }
 
 .cardTopPara {
@@ -197,7 +51,7 @@
   height: 100%;
   width: 100%;
   border-radius: 2rem;
-  box-shadow: 0px 0px 10px 5px rgba(255, 255, 255, 0.7);
+  box-shadow: 0px 0px 15px 0px rgba(255, 255, 255, 0.7);
   position: absolute;
   backface-visibility: hidden;
   display: flex;
@@ -212,7 +66,7 @@
   height: 100%;
   width: 100%;
   border-radius: 2rem;
-  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.7);
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.7);
   position: absolute;
   backface-visibility: hidden;
   display: flex;
@@ -249,7 +103,7 @@
   all: unset;
 }
 
-.biggerCard{
+.biggerCard {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -257,7 +111,7 @@
   row-gap: 10px;
 }
 
-.smallCard{
+.smallCard {
   display: flex;
   flex-direction: column;
   row-gap: 10px;
@@ -273,18 +127,18 @@
   .myPhoto {
     width: 20%;
   }
-  .front{
+  .front {
     flex-direction: row;
   }
 
-  .smallCard{
+  .smallCard {
     flex-direction: row;
     column-gap: 15px;
   }
 }
 
-@media screen and (max-width : 400px) {
-  .containerCard{
+@media screen and (max-width: 400px) {
+  .containerCard {
     height: 150px;
   }
 }

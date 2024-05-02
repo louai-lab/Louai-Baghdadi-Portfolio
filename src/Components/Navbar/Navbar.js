@@ -33,7 +33,7 @@ const Navbar = () => {
   const bar3 = [Styles.line3, collapesed ? Styles.a : ""].join(" ");
 
   return (
-    <header className={Styles.header}>
+    <header className={darkMode === true ? Styles.header : Styles.headerLight}>
       <nav className={Styles.navBar}>
         <a
           className={Styles.logoContainer}
@@ -44,7 +44,7 @@ const Navbar = () => {
             // src={logo}
             width={200}
             height={31.5}
-            alt="Codi Chronicles Logo"
+            alt="louai"
           />
         </a>
 
@@ -54,11 +54,7 @@ const Navbar = () => {
             className={Styles.toggle}
             onClick={handleDarkModeToggle}
           />
-          <svg
-            viewBox="0 0 69.667 44"
-            // xmlns:xlink="http://www.w3.org/1999/xlink"
-            // xmlns="http://www.w3.org/2000/svg"
-          >
+          <svg viewBox="0 0 69.667 44">
             <g
               transform="translate(3.5 3.5)"
               data-name="Component 15 – 1"
@@ -78,109 +74,6 @@ const Navbar = () => {
                   className={Styles.container}
                 ></rect>
               </g>
-
-              {/* <g transform="translate(2.333 2.333)" className={Styles.button}>
-                <g data-name="sun" className={Styles.sun}>
-                  <g
-                    filter="url(#sun-outer)"
-                    transform="matrix(1, 0, 0, 1, -5.83, -5.83)"
-                  >
-                    <circle
-                      fill="#f8e664"
-                      transform="translate(5.83 5.83)"
-                      r="15.167"
-                      cy="15.167"
-                      cx="15.167"
-                      data-name="sun-outer"
-                      id="sun-outer-2"
-                    ></circle>
-                  </g>
-                  <g
-                    filter="url(#sun)"
-                    transform="matrix(1, 0, 0, 1, -5.83, -5.83)"
-                  >
-                    <path
-                      fill="rgba(246,254,247,0.29)"
-                      transform="translate(9.33 9.33)"
-                      d="M11.667,0A11.667,11.667,0,1,1,0,11.667,11.667,11.667,0,0,1,11.667,0Z"
-                      data-name="sun"
-                      id="sun-3"
-                    ></path>
-                  </g>
-                  <circle
-                    fill="#fcf4b9"
-                    transform="translate(8.167 8.167)"
-                    r="7"
-                    cy="7"
-                    cx="7"
-                    className={Styles.sunInner}
-                  ></circle>
-                </g>
-
-                <g data-name="moon" className={Styles.moon}>
-                  <g
-                    filter="url(#moon)"
-                    transform="matrix(1, 0, 0, 1, -31.5, -5.83)"
-                  >
-                    <circle
-                      fill="#cce6ee"
-                      transform="translate(31.5 5.83)"
-                      r="15.167"
-                      cy="15.167"
-                      cx="15.167"
-                      data-name="moon"
-                      id="moon-3"
-                    ></circle>
-                  </g>
-                  <g
-                    fill="#a6cad0"
-                    transform="translate(-24.415 -1.009)"
-                    className={Styles.patches}
-                  >
-                    <circle
-                      transform="translate(43.009 4.496)"
-                      r="2"
-                      cy="2"
-                      cx="2"
-                    ></circle>
-                    <circle
-                      transform="translate(39.366 17.952)"
-                      r="2"
-                      cy="2"
-                      cx="2"
-                      data-name="patch"
-                    ></circle>
-                    <circle
-                      transform="translate(33.016 8.044)"
-                      r="1"
-                      cy="1"
-                      cx="1"
-                      data-name="patch"
-                    ></circle>
-                    <circle
-                      transform="translate(51.081 18.888)"
-                      r="1"
-                      cy="1"
-                      cx="1"
-                      data-name="patch"
-                    ></circle>
-                    <circle
-                      transform="translate(33.016 22.503)"
-                      r="1"
-                      cy="1"
-                      cx="1"
-                      data-name="patch"
-                    ></circle>
-                    <circle
-                      transform="translate(50.081 10.53)"
-                      r="1.5"
-                      cy="1.5"
-                      cx="1.5"
-                      data-name="patch"
-                    ></circle>
-                  </g>
-                </g>
-              </g> */}
 
               <g transform="translate(2.333 2.333)" className={Styles.button}>
                 <g data-name="sun" className={Styles.sun}>
@@ -285,8 +178,6 @@ const Navbar = () => {
                 </g>
               </g>
 
-
-
               <g
                 filter="url(#cloud)"
                 transform="matrix(1, 0, 0, 1, -3.5, -3.5)"
@@ -351,20 +242,40 @@ const Navbar = () => {
 
         <ul className={Styles.linksWrapper}>
           <li>
-            <Link to="/">Home</Link>
+            <a href="#aboutMe">About Me</a>
           </li>
           <li>
-            <Link to="dashboard">Dashboard</Link>
+            <a href="#skills">Skills</a>
           </li>
+          <li>
+            <a href="#projects">Projects</a>
+          </li>
+          <li>
+            <a href="#experiences">Experiences</a>
+          </li>
+          <li>
+            <a href="#contact">Contact</a>
+          </li>
+          <li className={Styles.buttonDownload}>Download CV</li>
         </ul>
 
         <ul className={toggleClasses}>
           <li>
-            <Link to="/">Home</Link>
+            <a href="#aboutMe">About Me</a>
           </li>
           <li>
-            <Link to="dashboard">Dashboard</Link>
+            <a href="#skills">Skills</a>
           </li>
+          <li>
+            <a href="#projects">Projects</a>
+          </li>
+          <li>
+            <a href="#experiences">Experiences</a>
+          </li>
+          <li>
+            <a href="#contact">Contact</a>
+          </li>
+          <li className={Styles.buttonDownload}>Download CV</li>
         </ul>
 
         <div

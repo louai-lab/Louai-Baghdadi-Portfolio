@@ -42,4 +42,13 @@
 
 .skillsIcons {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.singleCanvas {
+  /* width: fit-content;
+  height: fit-content;
+  background-color: red; */
 }

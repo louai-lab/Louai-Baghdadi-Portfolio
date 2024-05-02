@@ -1,14 +1,29 @@
 .header {
-  /* position: absolute; */
   left: 0;
   top: 0;
   z-index: 5;
   width: 100%;
-  /* background-color: red; */
+  height: 80px;
+  font-size: clamp(8px, 2vw, 20px);
+  color: var(--color);
+  display: flex;
+  box-shadow: 0 2px 2px rgba(253, 253, 253, 0.2);
+}
+
+.headerLight {
+  left: 0;
+  top: 0;
+  z-index: 5;
+  width: 100%;
+  height: 80px;
+  font-size: clamp(8px, 2vw, 20px);
+  color: var(--color-dark);
+  display: flex;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
 }
 
 .navBar {
-  width: 67%;
+  width: 95%;
   margin: 0 auto;
   padding: 10px 0;
   display: flex;
@@ -27,7 +42,7 @@
   margin: 0;
   padding: 0;
   display: flex;
-  width: 150px;
+  column-gap: 15px;
   align-items: center;
   justify-content: space-between;
   list-style: none;
@@ -36,16 +51,15 @@
 .linksWrapper > li > a,
 .linksWrapperMobile > li > a {
   text-decoration: none;
-  /* color: white; */
-  color: var(--color-navbar);
+  color: unset;
+  /* color: var(--color-navbar); */
   font-family: var(--font-family);
   font-weight: bold;
-  font-size: 16px;
   transition: 0.3s opacity ease-in-out;
 }
 
 .linksWrapperMobile > li {
-  padding-left: 10px;
+  /* padding-left: 10px; */
 }
 
 .navBar ul > li > a:hover {
@@ -111,8 +125,9 @@
 }
 
 .linksWrapperMobile.activeNav {
-  height: 100px;
+  height: 150px;
   z-index: 9999;
+  padding: 5px;
 }
 
 @media screen and (max-width: 600px) {
@@ -129,18 +144,12 @@
   }
 }
 
-
-
-
-
-
-
 /* The switch - the box around the slider */
 .themeToggleButton {
   font-size: 17px;
   position: relative;
   display: inline-block;
-  width: 4em;
+  width: 3em;
   cursor: pointer;
 }
 
@@ -205,4 +214,84 @@
 
 .toggle:checked + svg .stars {
   opacity: 1;
+}
+
+.buttonDownload {
+  display: inline-block;
+  position: relative;
+  padding: 10px 20px;
+  background-color: var(--secondary-clr);
+  color: white;
+  font-family: sans-serif;
+  text-decoration: none;
+  font-size: clamp(8px, 2vw, 20px);
+  text-align: center;
+  text-indent: 15px;
+  border: none;
+  border-radius: 10px;
+  transition: opacity 0.3s ease;
+}
+
+.buttonDownload:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.buttonDownload:before,
+.buttonDownload:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  left: 15px;
+  top: 52%;
+}
+
+.buttonDownload:before {
+  width: 10px;
+  height: 2px;
+  border-style: solid;
+  border-width: 0 2px 2px;
+}
+
+.buttonDownload:after {
+  width: 0;
+  height: 0;
+  margin-left: 3px;
+  margin-top: -7px;
+  border-style: solid;
+  border-width: 4px 4px 0 4px;
+  border-color: transparent;
+  border-top-color: inherit;
+  animation: downloadArrow 1s linear infinite;
+  animation-play-state: paused;
+}
+
+.buttonDownload:hover:before {
+  border-color: #cdefbd;
+}
+
+.buttonDownload:hover:after {
+  border-top-color: #cdefbd;
+  animation-play-state: running;
+}
+
+@keyframes downloadArrow {
+  0% {
+    margin-top: -7px;
+    opacity: 1;
+  }
+
+  0.001% {
+    margin-top: -15px;
+    opacity: 0.4;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    margin-top: 0;
+    opacity: 0.4;
+  }
 }

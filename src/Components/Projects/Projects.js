@@ -1,31 +1,63 @@
 import React, { useState } from "react";
 import ProjectsStyles from "./Projects.module.css";
-import ProjectImage from "../../Assets/reactIcon.png";
 import linkIcon from "../../Assets/ph--link.svg";
 import Reveal from "../../Utils/Reveal";
 import { useDarkMode } from "../../Utils/DarkMode";
+import react from "../../Assets/reactjs.png";
+import { Tilt } from "react-tilt";
+import abouHatem from "../../Assets/images (1).jpeg";
+import githubicon from "../../Assets/akar-icons--github-outline-fill.svg";
 
 const ProjectsData = [
   {
     title: "Smart Home Automation System",
-    img: ProjectImage,
-    description:
-      "This project aims to create a smart home automation system using IoT devices and sensors. The system allows users to remotely control various home appliances such as lights e a smart home automation system using IoT devices and sensors. Th e a smart home automation system using IoT devices and sensors. Th",
+    img: abouHatem,
+    description: "This project aims to create a  ",
     back: "back Side test",
+    link: "https://www.google.com/",
+    languages: [
+      {
+        name: "MongoDB",
+        color: "green",
+      },
+      { name: "Express.js", color: "black" },
+      { name: "React", color: "cyan" },
+      { name: "Node.js", color: "green" },
+    ],
   },
   {
     title: "E-commerce Website Development Development",
-    img: ProjectImage,
+    img: react,
     description:
       "This project involves the development of a full-fledged e-commerce website from scratch. It includes features such as user authentication, product browsing, shopping cart management",
     back: "back Side test",
+    link: "https://www.google.com/",
+    languages: [
+      {
+        name: "MongoDB",
+        color: "green",
+      },
+      { name: "Express.js", color: "black" },
+      { name: "React", color: "cyan" },
+      { name: "Node.js", color: "green" },
+    ],
   },
   {
     title: "Data Analysis Dashboard",
-    img: ProjectImage,
+    img: react,
     description:
       "This project focuses on creating a data analysis dashboard for visualizing and interpreting large datasets. The dashboard provides interactive charts, graphs, and metrics to help",
     back: "back Side",
+    link: "https://www.google.com/",
+    languages: [
+      {
+        name: "MongoDB",
+        color: "green",
+      },
+      { name: "Express.js", color: "black" },
+      { name: "React", color: "cyan" },
+      { name: "Node.js", color: "green" },
+    ],
   },
 ];
 
@@ -33,13 +65,9 @@ function Projects() {
   const { darkMode } = useDarkMode();
   const [expandedIndex, setExpandedIndex] = useState(null);
 
-  // const toggleDescription = (index) => {
-  //   setExpandedIndex(index === expandedIndex ? null : index);
-  // };
-
   return (
     <div className={ProjectsStyles.ContainerProjects}>
-      <div className={ProjectsStyles.title}>
+      <div>
         <p className={ProjectsStyles.gold}>
           <Reveal>
             <h1>My Projects</h1>
@@ -56,57 +84,62 @@ function Projects() {
           </h1>
         </Reveal>
       </div>
-      <div className={ProjectsStyles.cards}>
+
+      <div className={ProjectsStyles.projectsCards}>
         {ProjectsData.map((project, index) => {
-          const isExpanded = index === expandedIndex;
           return (
-            <div className={ProjectsStyles.card}>
-              <div className={ProjectsStyles.try}>
+            <Tilt
+              options={{ max: 45, scale: 1, speed: 450 }}
+              className={
+                darkMode === true
+                  ? ProjectsStyles.tiltContainer
+                  : ProjectsStyles.tiltContainerLight
+              }
+            >
+              <div className={ProjectsStyles.container}>
                 <img
                   src={project.img}
-                  alt="d"
-                  className={ProjectsStyles.imageProject}
+                  alt={project.title}
+                  className={ProjectsStyles.image}
                 />
-                {/* <a href="#x" className={ProjectsStyles.livePreview}>
-                  <img src={linkIcon} alt="link" /> Live Preview
-                </a> */}
-                <p className={ProjectsStyles.livePreview}>
-                  <Reveal>{project.title}</Reveal>
-                </p>
+                <div className={ProjectsStyles.resources}>
+                  <div
+                    onClick={() => window.open(project.link, "_blank")}
+                    className={ProjectsStyles.divClick}
+                  >
+                    <img
+                      src={githubicon}
+                      alt="github"
+                      className={ProjectsStyles.githubicon}
+                    />
+                  </div>
+                </div>
               </div>
-              <div className={ProjectsStyles.cardContent}>
-                <p className={ProjectsStyles.cardTitle}>{project.title}</p>
-                <p className={ProjectsStyles.cardDescription}>
-                  {project.description}
-                </p>
+
+              <div className={ProjectsStyles.infoCard}>
+                <div>
+                  <h3 className={ProjectsStyles.title}>
+                    <Reveal>{project.title}</Reveal>
+                  </h3>
+                  <p className={ProjectsStyles.description}>
+                    <Reveal>{project.description}</Reveal>
+                  </p>
+                </div>
+                <div className={ProjectsStyles.languageContainer}>
+                  {project.languages.map((language) => {
+                    return (
+                      <p
+                        style={{ color: `${language.color}` }}
+                        className={ProjectsStyles.languageName}
+                        key={language.name}
+                      >
+                        <Reveal>{language.name}</Reveal>
+                      </p>
+                    );
+                  })}
+                </div>
               </div>
-            </div>
-
-            // <div key={index} className={ProjectsStyles.singleProject}>
-            //   <p className={ProjectsStyles.singleTitle}>
-            //     <Reveal>{project.title}</Reveal>
-            //   </p>
-            //   <p className={ProjectsStyles.description}>
-            //     <Reveal>
-            //       {" "}
-            //       {project.description.length <= 150 || isExpanded
-            //         ? project.description
-            //         : project.description.substring(0, 150) + "..."}
-            //       {project.description.length > 150 && (
-            //         <button
-            //           onClick={() => toggleDescription(index)}
-            //           className={ProjectsStyles.showMoreLessButton}
-            //         >
-            //           {isExpanded ? "Show Less" : "Show More"}
-            //         </button>
-            //       )}
-            //     </Reveal>
-            //   </p>
-
-            //   <a href="#x" className={ProjectsStyles.livePreview}>
-            //     <img src={linkIcon} alt="link" /> Live Preview
-            //   </a>
-            // </div>
+            </Tilt>
           );
         })}
       </div>

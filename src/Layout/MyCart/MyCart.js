@@ -1,14 +1,13 @@
 import React from "react";
-import github from "../../Assets/akar-icons--github-outline-fill.svg";
-import linkedin from "../../Assets/et--linkedin.svg";
-import downloadIcon from "../../Assets/material-symbols--download (1).svg";
 import AboutMeStyle from "./MyCart.module.css";
-import staticData from "../../Data/MyData";
-import Reveal from "../../Utils/Reveal";
 import { useDarkMode } from "../../Utils/DarkMode";
+import { useUserStore } from "../../Zustand/Store";
 
 function MyCart() {
   const { darkMode } = useDarkMode();
+  const { user } = useUserStore();
+
+  // console.log(user);
 
   return (
     <div className={AboutMeStyle.containerCard}>
@@ -25,14 +24,11 @@ function MyCart() {
           <div className={AboutMeStyle.biggerCard}>
             <div className={AboutMeStyle.smallCard}>
               <img
-                src={staticData.image}
-                alt="louai"
+                src={`${process.env.REACT_APP_IMAGE_PATH}/${user?.profile}`}
+                alt={user.firstName}
                 className={AboutMeStyle.myPhoto}
               />
-              <p className={AboutMeStyle.heading}>
-                {" "}
-                Full Stack Web Development{" "}
-              </p>
+              <p className={AboutMeStyle.heading}> {user.career} </p>
             </div>
             <p className={AboutMeStyle.follow}>Hover me for more...</p>
           </div>
@@ -54,7 +50,7 @@ function MyCart() {
           </svg>
 
           <div className={AboutMeStyle.icons}>
-            <a href={staticData.links.instagram}>
+            <a href={user.instagramLink}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="32"
@@ -68,19 +64,7 @@ function MyCart() {
               </svg>
             </a>
 
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="32"
-              height="32"
-              fill="currentColor"
-              // class="bi bi-whatsapp"
-              className={AboutMeStyle.biWhatsapp}
-              viewBox="0 0 16 16"
-            >
-              <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"></path>
-            </svg>
-
-            <a href={staticData.links.facebook}>
+            <a href={user.facebookLink}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="32"
@@ -92,6 +76,16 @@ function MyCart() {
               >
                 <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"></path>
               </svg>
+              {/* <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                fill="currentColor"
+                className={AboutMeStyle.githubIcon}
+                viewBox="0 0 16 16"
+              >
+                <path d="M12 0a12 12 0 0 0-3.8 23c.6 0 1.2-.2 1.7-.5 2.2 0 3.7-1 4.4-1.9.3-.3.6-.4.8-.8 0-.3.3-1.1 0-1.9-.3-.9-.5-1.5-1.7-1.8 0-.4-.6-2-.6-4.4 0-.9.3-1.6.8-2.2-2.8-.3-5.7-1.4-5.7-6.3 0-1.4.5-2.6 1.3-3.5-.1-.3-.6-1.7.1-3.5 0 0 1.1-.3 3.6 1.4 1-.3 2.1-.4 3.2-.4s2.2.1 3.2.4c2.5-1.7 3.6-1.4 3.6-1.4.7 1.8.2 3.2.1 3.5.8.9 1.3 2.1 1.3 3.5 0 4.9-3 6-5.8 6.3.5.4.9 1.2.9 2.5 0 1.8-.1 3.2-.1 3.6 0 .3.2.7.8.6.5-.4 1.7-1 4.4-1.9.5.4 1.1.5 1.7.5A12 12 0 0 0 12 0"></path>
+              </svg> */}
             </a>
           </div>
         </div>

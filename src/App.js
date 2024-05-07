@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter } from "react-router-dom";
-import { Router, Route, Routes } from "react-router-dom";
 import StyleApp from "./App.module.css";
 import Navbar from "./Components/Navbar/Navbar.js";
 import AboutMe from "./Components/AboutMe/AboutMe.js";
@@ -8,12 +7,21 @@ import Skills from "./Components/Skills/Skills.js";
 import Projects from "./Components/Projects/Projects.js";
 import Experiences from "./Components/Experiences/Experiences.js";
 import Contact from "./Components/Contact/Contact.js";
-import { DarkModeProvider } from "./Utils/DarkMode.js";
 import { useDarkMode } from "./Utils/DarkMode.js";
+import { useUserStore } from "./Zustand/Store.js";
 
 function App() {
   const { darkMode } = useDarkMode();
-  return (
+
+  const { loading, user, getUser } = useUserStore();
+  // console.log(user);
+
+  useEffect(() => {
+    getUser();
+  }, [getUser]);
+  return loading ? (
+    <div>loading</div>
+  ) : (
     <BrowserRouter>
       <div className={darkMode === false ? StyleApp.App : StyleApp.AppDark}>
         <Navbar />

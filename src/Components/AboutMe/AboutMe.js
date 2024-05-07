@@ -1,12 +1,15 @@
 import React from "react";
 import AboutMeStyle from "./AboutMe.module.css";
-import MyData from "../../Data/MyData";
 import Reveal from "../../Utils/Reveal";
 import { useDarkMode } from "../../Utils/DarkMode";
 import MyCart from "../../Layout/MyCart/MyCart";
+import { useUserStore } from "../../Zustand/Store";
 
 function AboutMe() {
   const { darkMode } = useDarkMode();
+  const { user } = useUserStore();
+
+  // console.log(user);
 
   return (
     <div className={AboutMeStyle.Container}>
@@ -25,22 +28,26 @@ function AboutMe() {
           </p>
           <Reveal>
             <h1>
-              I am <span className={AboutMeStyle.green}>{MyData.name}</span>
+              I am{" "}
+              <span className={AboutMeStyle.green}>
+                {user.firstName} {user.lastName}
+              </span>
             </h1>
           </Reveal>
           <Reveal>
             <p className={AboutMeStyle.elevatorPitchPara}>
-              {MyData.elevatorPitch}
+              {user.elevatorPitch}
             </p>
           </Reveal>
         </div>
         <div className={AboutMeStyle.cards}>
           <div className={AboutMeStyle.expCard}>
-            <p className={AboutMeStyle.number}>{MyData.yearsOfExperience}+</p>
+            <p className={AboutMeStyle.number}>{user.startDate}+</p>
             <p className={AboutMeStyle.green}>Years of Experiences</p>
           </div>
           <div className={AboutMeStyle.expCard}>
-            <p className={AboutMeStyle.number}>{MyData.projectsCompleted}+</p>
+            <p className={AboutMeStyle.number}>2+</p>
+
             <p className={AboutMeStyle.green}>Projects Completed</p>
           </div>
         </div>

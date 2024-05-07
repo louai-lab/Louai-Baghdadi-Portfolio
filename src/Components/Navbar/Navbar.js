@@ -1,16 +1,17 @@
 import Styles from "./Navbar.module.css";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-// import logo from "../../assets/images/logo.png";
 import { useDarkMode } from "../../Utils/DarkMode";
+import { useUserStore } from "../../Zustand/Store";
 
 const Navbar = () => {
   const { darkMode, toggleDarkMode } = useDarkMode();
   const [collapesed, setCollapsed] = useState(false);
+  const { user } = useUserStore();
+
+  // console.log(user.cv);
 
   const handleDarkModeToggle = () => {
     toggleDarkMode();
-    // console.log(!darkMode);
   };
 
   useEffect(() => {
@@ -31,6 +32,16 @@ const Navbar = () => {
   const bar1 = [Styles.line1, collapesed ? Styles.a : ""].join(" ");
   const bar2 = [Styles.line2, collapesed ? Styles.a : ""].join(" ");
   const bar3 = [Styles.line3, collapesed ? Styles.a : ""].join(" ");
+
+  const handleDownload = () => {
+    const pdfUrl = `${process.env.REACT_APP_IMAGE_PATH}/${user.cv}`;
+    const link = document.createElement("a");
+    link.href = pdfUrl;
+    link.download = "Louai-Baghdadi-CV";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
     <header className={darkMode === true ? Styles.header : Styles.headerLight}>
@@ -256,7 +267,17 @@ const Navbar = () => {
           <li>
             <a href="#contact">Contact</a>
           </li>
-          <li className={Styles.buttonDownload}>Download CV</li>
+          <li className={Styles.buttonDownload}>
+            <button style={{ all: "unset" }} onClick={handleDownload}>
+              Download CV
+            </button>
+            {/* <a
+              href={`${process.env.REACT_APP_IMAGE_PATH}/${user.cv}`}
+              download="Louai-Baghdadi-CV.pdf"
+            >
+              Download CV
+            </a> */}
+          </li>
         </ul>
 
         <ul className={toggleClasses}>
@@ -275,7 +296,11 @@ const Navbar = () => {
           <li>
             <a href="#contact">Contact</a>
           </li>
-          <li className={Styles.buttonDownload}>Download CV</li>
+          <li className={Styles.buttonDownload}>
+            <button style={{ all: "unset" }} onClick={handleDownload}>
+              Download CV
+            </button>
+          </li>
         </ul>
 
         <div

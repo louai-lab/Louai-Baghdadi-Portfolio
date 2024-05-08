@@ -30,19 +30,19 @@ function AboutMe() {
             <h1>
               I am{" "}
               <span className={AboutMeStyle.green}>
-                {user.firstName} {user.lastName}
+                {user?.firstName} {user?.lastName}
               </span>
             </h1>
           </Reveal>
           <Reveal>
             <p className={AboutMeStyle.elevatorPitchPara}>
-              {user.elevatorPitch}
+              {user?.elevatorPitch}
             </p>
           </Reveal>
         </div>
         <div className={AboutMeStyle.cards}>
           <div className={AboutMeStyle.expCard}>
-            <p className={AboutMeStyle.number}>{user.startDate}+</p>
+            <p className={AboutMeStyle.number}>{user?.startDate}+</p>
             <p className={AboutMeStyle.green}>Years of Experiences</p>
           </div>
           <div className={AboutMeStyle.expCard}>

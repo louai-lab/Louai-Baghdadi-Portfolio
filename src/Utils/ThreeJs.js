@@ -51,6 +51,8 @@ const BallCanvas = ({ icon, name }) => {
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls enableZoom={false} />
         <Ball imgUrl={icon} />
+        {/* src={`${process.env.REACT_APP_IMAGE_PATH}/${user?.profile}`} */}
+
       </Suspense>
       {/* <Text
         position={[0, -4, 1]}

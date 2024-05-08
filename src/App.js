@@ -9,16 +9,25 @@ import Experiences from "./Components/Experiences/Experiences.js";
 import Contact from "./Components/Contact/Contact.js";
 import { useDarkMode } from "./Utils/DarkMode.js";
 import { useUserStore } from "./Zustand/Store.js";
+import { useSkillsStore } from "./Zustand/Store.js";
+import { useProjectsStore } from "./Zustand/Store.js";
 
 function App() {
   const { darkMode } = useDarkMode();
 
-  const { loading, user, getUser } = useUserStore();
+  const { loading, getUser } = useUserStore();
+  const { skills, getSkills } = useSkillsStore();
+  const { projects, getProjects } = useProjectsStore();
+
   // console.log(user);
+  // console.log(skills);
+  // console.log(projects);
 
   useEffect(() => {
     getUser();
-  }, [getUser]);
+    getSkills();
+    getProjects();
+  }, [getUser, getSkills, getProjects]);
   return loading ? (
     <div>loading</div>
   ) : (

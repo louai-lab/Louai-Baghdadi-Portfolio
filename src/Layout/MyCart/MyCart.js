@@ -25,10 +25,10 @@ function MyCart() {
             <div className={AboutMeStyle.smallCard}>
               <img
                 src={`${process.env.REACT_APP_IMAGE_PATH}/${user?.profile}`}
-                alt={user.firstName}
+                alt={user?.firstName}
                 className={AboutMeStyle.myPhoto}
               />
-              <p className={AboutMeStyle.heading}> {user.career} </p>
+              <p className={AboutMeStyle.heading}> {user?.career} </p>
             </div>
             <p className={AboutMeStyle.follow}>Hover me for more...</p>
           </div>
@@ -50,7 +50,7 @@ function MyCart() {
           </svg>
 
           <div className={AboutMeStyle.icons}>
-            <a href={user.instagramLink}>
+            <a href={user?.instagramLink}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="32"
@@ -64,7 +64,7 @@ function MyCart() {
               </svg>
             </a>
 
-            <a href={user.facebookLink}>
+            <a href={user?.facebookLink}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="32"

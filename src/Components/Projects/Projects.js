@@ -12,7 +12,8 @@ const ProjectsData = [
   {
     title: "Smart Home Automation System",
     img: abouHatem,
-    description: "This project aims to create a  ",
+    description:
+      "Football tracking website for the Northern Football Association's 3rd, 4th, and 5th-level leagues. Our platform is designed to efficiently manage and monitor league activities, providing essential tools for both employees and referees . Employees can use our website to schedule matches, update league standings, and handle administrative tasks to ensure smooth league operations.",
     back: "back Side test",
     link: "https://www.google.com/",
     languages: [

@@ -4,64 +4,16 @@ import SkillsStyles from "./Skills.module.css";
 import BallCanvas from "../../Utils/ThreeJs";
 import Reveal from "../../Utils/Reveal";
 import { useDarkMode } from "../../Utils/DarkMode";
-import css from "../../Assets/css.png";
-import figma from "../../Assets/figma.png";
-import github from "../../Assets/github.png";
-import html from "../../Assets/html.png";
-import javascript from "../../Assets/javascript.png";
-import mongodb from "../../Assets/mongodb.png";
-import nodejs from "../../Assets/nodejs.png";
-import react from "../../Assets/reactjs.png";
-import expressjs from "../../Assets/express.png";
-import threejs from "../../Assets/threejs.svg";
+
+import { useSkillsStore } from "../../Zustand/Store";
 
 function Skills() {
   const { darkMode } = useDarkMode();
+  const { loading, skills } = useSkillsStore();
 
-  const skills = [
-    {
-      name: "CSS",
-      icon: css,
-    },
-    {
-      name: "FIGMA",
-      icon: figma,
-    },
-    {
-      name: "GITHUB",
-      icon: github,
-    },
-    {
-      name: "HTML",
-      icon: html,
-    },
-    {
-      name: "JAVA SCRIPT",
-      icon: javascript,
-    },
-    {
-      name: "MONGODB",
-      icon: mongodb,
-    },
-    {
-      name: "NODEJS",
-      icon: nodejs,
-    },
-    {
-      name: "EXPRESSJS",
-      icon: expressjs,
-    },
-    {
-      name: "REACTJS",
-      icon: react,
-    },
-    {
-      name: "THREEJS",
-      icon: threejs,
-    },
-  ];
-
-  return (
+  return loading ? (
+    <div>Loading ...</div>
+  ) : (
     <div className={SkillsStyles.ContainerSkills}>
       <div className={SkillsStyles.title}>
         <p className={SkillsStyles.gold}>
@@ -82,8 +34,11 @@ function Skills() {
       </div>
       <div className={SkillsStyles.skillsIcons}>
         {skills.map((skill) => (
-          <div className={SkillsStyles.singleCanvas} key={skill.name}>
-            <BallCanvas icon={skill.icon} name={skill.name} />
+          <div className={SkillsStyles.singleCanvas} key={skill?._id}>
+            <BallCanvas
+              icon={`${process.env.REACT_APP_IMAGE_PATH}/${skill?.icon}`}
+              name={skill?.name}
+            />
           </div>
         ))}
       </div>

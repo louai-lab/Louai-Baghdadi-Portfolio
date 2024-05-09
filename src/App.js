@@ -11,23 +11,27 @@ import { useDarkMode } from "./Utils/DarkMode.js";
 import { useUserStore } from "./Zustand/Store.js";
 import { useSkillsStore } from "./Zustand/Store.js";
 import { useProjectsStore } from "./Zustand/Store.js";
+import { useExperiencesStore } from "./Zustand/Store.js";
 
 function App() {
   const { darkMode } = useDarkMode();
 
   const { loading, getUser } = useUserStore();
-  const { skills, getSkills } = useSkillsStore();
-  const { projects, getProjects } = useProjectsStore();
+  const { getSkills } = useSkillsStore();
+  const { getProjects } = useProjectsStore();
+  const { getExperiences } = useExperiencesStore();
 
   // console.log(user);
   // console.log(skills);
   // console.log(projects);
+  // console.log(experiences);
 
   useEffect(() => {
     getUser();
     getSkills();
     getProjects();
-  }, [getUser, getSkills, getProjects]);
+    getExperiences();
+  }, [getUser, getSkills, getProjects, getExperiences]);
   return loading ? (
     <div>loading</div>
   ) : (

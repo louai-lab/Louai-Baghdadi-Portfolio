@@ -77,6 +77,10 @@
   text-align: center;
 }
 
+.livePreview:hover{
+  cursor: pointer;
+}
+
 .showMoreLessButton {
   border: none;
   background-color: transparent;
@@ -199,6 +203,10 @@
   /* background-color: red; */
 }
 
+/* .container:hover {
+  cursor: pointer;
+} */
+
 .tiltContainer {
   background: var(--bg-clr-card);
   padding: 1.25rem;
@@ -230,11 +238,10 @@
   }
 }
 
-
 .projectsCards {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   gap: 10px;
 }
 

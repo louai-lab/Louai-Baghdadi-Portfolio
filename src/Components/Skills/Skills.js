@@ -11,6 +11,8 @@ function Skills() {
   const { darkMode } = useDarkMode();
   const { loading, skills } = useSkillsStore();
 
+  // console.log(skills);
+
   return loading ? (
     <div>Loading ...</div>
   ) : (

@@ -55,3 +55,21 @@ export const useProjectsStore = create((set) => ({
     }
   },
 }));
+
+export const useExperiencesStore = create((set) => ({
+  experiences: [],
+  loading: true,
+
+  getExperiences: async () => {
+    try {
+      set({ loading: true });
+      const response = await axiosInstance.get("/experiences");
+      if (response) {
+        set({ experiences: response.data, loading: false });
+      }
+    } catch (error) {
+      console.error(error);
+      set({ loading: false });
+    }
+  },
+}));

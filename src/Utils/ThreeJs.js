@@ -7,7 +7,7 @@ import {
   Preload,
   useTexture,
 } from "@react-three/drei";
-import { Text } from "@react-three/drei";
+// import { Text } from "@react-three/drei";
 import StyleThree from "./Three.module.css";
 
 import CanvasLoader from "./Loader";
@@ -40,6 +40,7 @@ const Ball = (props) => {
 };
 
 const BallCanvas = ({ icon, name }) => {
+  // console.log(icon);
   return (
     <Canvas
       frameloop="demand"
@@ -52,7 +53,6 @@ const BallCanvas = ({ icon, name }) => {
         <OrbitControls enableZoom={false} />
         <Ball imgUrl={icon} />
         {/* src={`${process.env.REACT_APP_IMAGE_PATH}/${user?.profile}`} */}
-
       </Suspense>
       {/* <Text
         position={[0, -4, 1]}

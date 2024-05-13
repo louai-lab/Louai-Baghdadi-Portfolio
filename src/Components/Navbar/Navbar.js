@@ -9,6 +9,7 @@ const Navbar = () => {
   const { user } = useUserStore();
 
   // console.log(user.cv);
+  // console.log(user);
 
   const handleDarkModeToggle = () => {
     toggleDarkMode();
@@ -52,9 +53,10 @@ const Navbar = () => {
           aria-label="Go to homepage"
         >
           <img
-            // src={logo}
-            width={200}
-            height={31.5}
+            src={`${process.env.REACT_APP_IMAGE_PATH}/${user?.logo}`}
+            // width={200}
+            // height={60}
+            className={Styles.logo}
             alt="louai"
           />
         </a>

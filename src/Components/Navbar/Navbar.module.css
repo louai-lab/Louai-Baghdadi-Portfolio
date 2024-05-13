@@ -38,6 +38,10 @@
   opacity: 0.7;
 }
 
+.logo{
+  width: 200px;
+}
+
 .linksWrapper {
   margin: 0;
   padding: 0;
@@ -130,6 +134,22 @@
   padding: 5px;
 }
 
+@media screen and (max-width: 950px){
+  .logo{
+    width: 150px;
+  }
+
+  .linksWrapper{
+    column-gap: 10px;
+  }
+}
+
+@media screen and (max-width: 800px){
+  .logo{
+    width: 100px;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .navBar {
     width: 92%;
@@ -219,7 +239,7 @@
 .buttonDownload {
   display: inline-block;
   position: relative;
-  padding: 10px 20px;
+  padding: 10px 10px;
   background-color: var(--secondary-clr);
   color: white;
   font-family: sans-serif;

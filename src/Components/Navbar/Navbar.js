@@ -27,15 +27,27 @@ const Navbar = () => {
   }, []);
 
   const toggleClasses = [
-    Styles.linksWrapperMobile,
+    // Styles.linksWrapperMobile,
+    darkMode
+      ? `${Styles.linksWrapperMobile} ${Styles.linksWrapperMobileConcat}`
+      : Styles.linksWrapperMobile,
     collapesed ? Styles.activeNav : "",
   ].join(" ");
-  const bar1 = [Styles.line1, collapesed ? Styles.a : ""].join(" ");
-  const bar2 = [Styles.line2, collapesed ? Styles.a : ""].join(" ");
-  const bar3 = [Styles.line3, collapesed ? Styles.a : ""].join(" ");
+  const bar1 = [
+    darkMode ? Styles.line1 : Styles.line1Dark,
+    collapesed ? Styles.a : "",
+  ].join(" ");
+  const bar2 = [
+    darkMode ? Styles.line2 : Styles.line2Dark,
+    collapesed ? Styles.a : "",
+  ].join(" ");
+  const bar3 = [
+    darkMode ? Styles.line3 : Styles.line3Dark,
+    collapesed ? Styles.a : "",
+  ].join(" ");
 
   const handleDownload = () => {
-    const pdfUrl = `${process.env.REACT_APP_IMAGE_PATH}/${user.cv}`;
+    const pdfUrl = `${process.env.REACT_APP_IMAGE_PATH}/${user?.cv}`;
     const link = document.createElement("a");
     link.href = pdfUrl;
     link.download = "Louai-Baghdadi-CV";
@@ -253,7 +265,13 @@ const Navbar = () => {
           </svg>
         </label>
 
-        <ul className={Styles.linksWrapper}>
+        <ul
+          className={
+            darkMode
+              ? `${Styles.linksWrapper} ${Styles.linksWrapperConcat}`
+              : Styles.linksWrapper
+          }
+        >
           <li>
             <a href="#aboutMe">About Me</a>
           </li>

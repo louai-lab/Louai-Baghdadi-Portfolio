@@ -2,33 +2,7 @@ import React from "react";
 import ExperiencesStyles from "./Experiences.module.css";
 import Reveal from "../../Utils/Reveal";
 import { useDarkMode } from "../../Utils/DarkMode";
-import { useExperiencesStore } from "../../Zustand/Store";
-
-const certificates = [
-  {
-    certificate: "LT",
-    title: "Certificate 1",
-    description:
-      "Description of Certificate 1 goes here... Description of Certificate 3 goes here...Description of Certificate 3 goes here...Description of Certificate 3 goes here...Description of Certificate 3 goes here",
-    startDate: "January, 2020",
-    endDate: "February, 2020",
-  },
-  {
-    certificate: "LT",
-    title: "Certificate 2",
-    description: "Description of Certificate 2 goes here... ",
-    startDate: "March, 2020",
-    endDate: "April, 2020",
-  },
-  {
-    certificate: "LT",
-    title: "Certificate 3",
-    description:
-      "Description of Certificate 3 goes here...Description of Certificate 3 goes here...Description of Certificate 3 goes here...Description of Certificate 3 goes here...Description of Certificate 3 goes here...",
-    startDate: "May, 2020",
-    endDate: "June, 2020",
-  },
-];
+import { useExperiencesStore } from "../../Zustand/Store"
 
 function Experiences() {
   const { darkMode } = useDarkMode();
@@ -51,20 +25,18 @@ function Experiences() {
       "December",
     ];
 
-    const month = monthNames[date.getMonth()]; // Get month name
-    const year = date.getFullYear(); // Get full year
+    const month = monthNames[date.getMonth()];
+    const year = date.getFullYear();
 
     return `${month} ${year}`;
   };
-
-  // console.log(experiences);
 
   return (
     <div className={ExperiencesStyles.ContainerExperiences}>
       <div className={ExperiencesStyles.title}>
         <p className={ExperiencesStyles.gold}>
           <Reveal>
-            <h1>My Experinces</h1>
+            <h1>My Experiences</h1>
           </Reveal>
           <span
             className={

@@ -5,6 +5,7 @@ import { useDarkMode } from "../../Utils/DarkMode";
 import { Tilt } from "react-tilt";
 import preview from "../../Assets/ph--link.svg";
 import { useProjectsStore } from "../../Zustand/Store";
+import SingleProject from "../../Layout/SingleProject/SingleProject";
 
 function Projects() {
   const { darkMode } = useDarkMode();
@@ -34,21 +35,24 @@ function Projects() {
       </div>
 
       <div className={ProjectsStyles.projectsCards}>
+        {projects.map((project) => (
+          <SingleProject key={project._id} project={project} />
+        ))}
+      </div>
+
+      {/* <div className={ProjectsStyles.projectsCards}>
         {projects.map((project, index) => {
           return (
-            <Tilt
+            <div
               key={project._id}
-              options={{ max: 20, scale: 2, speed: 150 }}
+              // options={{ max: 20, scale: 2, speed: 150 }}
               className={
                 darkMode === true
                   ? ProjectsStyles.tiltContainer
                   : ProjectsStyles.tiltContainerLight
               }
             >
-              <div
-                className={ProjectsStyles.container}
-                // onClick={() => window.open(project?.link, "_blank")}
-              >
+              <div className={ProjectsStyles.container}>
                 <img
                   src={`${process.env.REACT_APP_IMAGE_PATH}/${project?.image}`}
                   alt={project?.title}
@@ -62,7 +66,7 @@ function Projects() {
                     <Reveal>{project?.title}</Reveal>
                   </h3>
                   <p className={ProjectsStyles.description}>
-                    {/* <Reveal>{project?.description}</Reveal> */}
+                    {" "}
                     <Reveal>
                       {showFullDescription
                         ? project?.description
@@ -99,10 +103,10 @@ function Projects() {
                   Live Preview <img src={preview} alt="preview" />
                 </p>
               </div>
-            </Tilt>
+            </div>
           );
         })}
-      </div>
+      </div> */}
     </div>
   );
 }

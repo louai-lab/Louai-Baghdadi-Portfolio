@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import ProjectsStyles from "./Projects.module.css";
 import Reveal from "../../Utils/Reveal";
 import { useDarkMode } from "../../Utils/DarkMode";
-import { Tilt } from "react-tilt";
 import preview from "../../Assets/ph--link.svg";
 import { useProjectsStore } from "../../Zustand/Store";
 import SingleProject from "../../Layout/SingleProject/SingleProject";

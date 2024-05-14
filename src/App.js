@@ -13,11 +13,14 @@ import { useSkillsStore } from "./Zustand/Store.js";
 import { useProjectsStore } from "./Zustand/Store.js";
 import { useExperiencesStore } from "./Zustand/Store.js";
 import Loading from "./Components/Loading/Loading.js";
+import { Helmet } from "react-helmet-async";
+import HelmetProvider from "react-helmet-async";
+import FavIcon from "./Assets/LOUAI (1).png";
 
 function App() {
   const { darkMode } = useDarkMode();
 
-  const { loading, getUser } = useUserStore();
+  const { loading, user, getUser } = useUserStore();
   const { getSkills } = useSkillsStore();
   const { getProjects } = useProjectsStore();
   const { getExperiences } = useExperiencesStore();
@@ -37,6 +40,18 @@ function App() {
     <Loading />
   ) : (
     <BrowserRouter>
+      <Helmet>
+        <link rel="shortcut icon" href={FavIcon} type="image/x-icon" />
+        <title>Louai Baghdadi Portfolio</title>
+        <meta
+          name="description"
+          content="Welcome to Louai Baghdadi's portfolio website. Explore my skills and projects as a Full Stack Web Developer, specializing in React, MongoDB, Express, Node.js, Three.js, and Framer Motion. Connect with me on Instagram, Facebook, and LinkedIn."
+        />
+        <meta
+          name="keywords"
+          content="Louai Baghdadi, portfolio, Full Stack Web Developer, React, MongoDB, Express, Node.js, Three.js, Framer Motion, web development, projects, skills, contact, Instagram, Facebook, LinkedIn"
+        />
+      </Helmet>
       <div className={darkMode === false ? StyleApp.App : StyleApp.AppDark}>
         <Navbar />
 

@@ -12,6 +12,7 @@ import { useUserStore } from "./Zustand/Store.js";
 import { useSkillsStore } from "./Zustand/Store.js";
 import { useProjectsStore } from "./Zustand/Store.js";
 import { useExperiencesStore } from "./Zustand/Store.js";
+import Loading from "./Components/Loading/Loading.js";
 
 function App() {
   const { darkMode } = useDarkMode();
@@ -33,7 +34,7 @@ function App() {
     getExperiences();
   }, [getUser, getSkills, getProjects, getExperiences]);
   return loading ? (
-    <div>loading</div>
+    <Loading />
   ) : (
     <BrowserRouter>
       <div className={darkMode === false ? StyleApp.App : StyleApp.AppDark}>

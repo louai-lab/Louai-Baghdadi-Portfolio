@@ -62,7 +62,7 @@
   transition: 0.3s opacity ease-in-out;
 }
 
-.linksWrapper > li > a{
+.linksWrapper > li > a {
   color: var(--color-dark);
 }
 
@@ -202,7 +202,6 @@
   }
 }
 
-/* The switch - the box around the slider */
 .themeToggleButton {
   font-size: 17px;
   position: relative;
@@ -211,67 +210,10 @@
   cursor: pointer;
 }
 
-/* Hide default HTML checkbox */
 .toggle {
   opacity: 0;
   width: 0;
   height: 0;
-}
-
-.container,
-.patches,
-.stars,
-.button,
-.sun,
-.moon,
-.cloud {
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 0.25s;
-}
-
-/* night sky background */
-.toggle:checked + svg .container {
-  fill: #2b4360;
-}
-
-/* move button to right when checked */
-.toggle:checked + svg .button {
-  transform: translate(28px, 2.333px);
-}
-
-/* show/hide sun and moon based on checkbox state */
-.sun {
-  opacity: 1;
-}
-
-.toggle:checked + svg .sun {
-  opacity: 0;
-}
-
-.moon {
-  opacity: 0;
-}
-
-.toggle:checked + svg .moon {
-  opacity: 1;
-}
-
-/* show or hide background items on checkbox state */
-.cloud {
-  opacity: 1;
-}
-
-.toggle:checked + svg .cloud {
-  opacity: 0;
-}
-
-.stars {
-  opacity: 0;
-}
-
-.toggle:checked + svg .stars {
-  opacity: 1;
 }
 
 .buttonDownload {
@@ -352,4 +294,77 @@
     margin-top: 0;
     opacity: 0.4;
   }
+}
+
+/* styles.module.css */
+
+.container {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+
+.button {
+  width: 4rem;
+  height: 2rem;
+  border-radius: 9999px;
+  transition-duration: 0.5s;
+  outline: none;
+  background-color: #e5e7eb;
+  overflow: hidden;
+}
+
+.button:before {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  content: "☀️";
+  position: absolute;
+  height: 1.8rem;
+  width: 1.8rem;
+  top: 50%;
+  background-color: #ffffff;
+  border-radius: 9999px;
+  left: 0.25rem;
+  transform: translateY(-50%);
+  transition: all 0.7s;
+}
+
+.input:checked + .button:before {
+  opacity: 0;
+  transform: rotate(-90deg) translateY(-100%);
+}
+
+.input:checked + .button {
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.16);
+  background-color: #383838;
+}
+
+.button:after {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  content: "🌑";
+  position: absolute;
+  background-color: #696969;
+  border-radius: 9999px;
+  top: 4px;
+  right: 0.25rem;
+  height: 1.6rem;
+  width: 1.6rem;
+  opacity: 0;
+  transition: all 0.7s;
+}
+
+.input:checked + .button:after {
+  opacity: 1;
+  transform: rotate(180deg) translateY(0);
 }

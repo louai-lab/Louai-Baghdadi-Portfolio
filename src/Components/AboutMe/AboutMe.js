@@ -4,10 +4,12 @@ import Reveal from "../../Utils/Reveal";
 import { useDarkMode } from "../../Utils/DarkMode";
 import MyCart from "../../Layout/MyCart/MyCart";
 import { useUserStore } from "../../Zustand/Store";
+import { useProjectsStore } from "../../Zustand/Store";
 
 function AboutMe() {
   const { darkMode } = useDarkMode();
   const { user } = useUserStore();
+  const { projects } = useProjectsStore();
 
   // console.log(user);
 
@@ -46,7 +48,7 @@ function AboutMe() {
             <p className={AboutMeStyle.green}>Years of Experiences</p>
           </div>
           <div className={AboutMeStyle.expCard}>
-            <p className={AboutMeStyle.number}>2+</p>
+            <p className={AboutMeStyle.number}>{projects.length}+</p>
 
             <p className={AboutMeStyle.green}>Projects Completed</p>
           </div>

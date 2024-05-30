@@ -14,9 +14,21 @@
   font-weight: bold;
 }
 
+/* .description {
+  color: var(--color);
+  margin-top: 2rem;
+} */
+
 .description {
   color: var(--color);
   margin-top: 2rem;
+  max-height: 120px;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+}
+
+.descriptionExpanded {
+  max-height: 500px;
 }
 
 .gold {

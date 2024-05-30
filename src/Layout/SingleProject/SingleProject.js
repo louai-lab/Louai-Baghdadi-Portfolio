@@ -31,7 +31,12 @@ function SingleProject({ project }) {
           <h3 className={ProjectsStyles.title}>
             <Reveal>{project?.title}</Reveal>
           </h3>
-          <p className={ProjectsStyles.description}>
+          {/* <p className={ProjectsStyles.description}> */}
+          <p
+            className={`${ProjectsStyles.description} ${
+              showFullDescription ? ProjectsStyles.descriptionExpanded : ""
+            }`}
+          >
             {" "}
             <Reveal>
               {showFullDescription

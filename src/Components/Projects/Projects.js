@@ -15,7 +15,7 @@ function Projects() {
 
   return (
     <div className={ProjectsStyles.ContainerProjects}>
-      <div>
+      <div style={{ display: "flex", flexDirection: "column", rowGap: "20px" }}>
         <p className={ProjectsStyles.gold}>
           <Reveal>
             <h1>My Projects</h1>

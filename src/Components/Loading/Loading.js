@@ -6,6 +6,7 @@ function Loading() {
     <div className={StylesLoading.center}>
       <div className={StylesLoading.loader}></div>
     </div>
+    
   );
 }
 
